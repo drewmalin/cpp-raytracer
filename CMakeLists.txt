@@ -36,9 +36,6 @@ file(GLOB_RECURSE ALL_FILES
   ${CMAKE_SOURCE_DIR}/tests/*.hpp
 )
 
-# Create project executable
-add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES})
-
 ######################
 # Dependencies setup #
 ######################
@@ -56,6 +53,12 @@ include_directories(
   "${CMAKE_SOURCE_DIR}/src"
   "${CMAKE_SOURCE_DIR}/include"
 )
+
+###########################
+# Main project executable #
+###########################
+
+add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES})
 
 ##############
 # Test setup #
@@ -75,9 +78,9 @@ if((CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME OR MODERN_CMAKE_BUILD_TESTING) AND 
   add_subdirectory(tests)
 endif()
 
-######################
-# CMake script setup #
-######################
+#######################
+# CMake scripts setup #
+#######################
 
 include(cmake/clang-format.cmake)
 include(cmake/cppcheck.cmake)
