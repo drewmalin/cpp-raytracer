@@ -28,7 +28,7 @@
 
 ### Static Analysis (cppcheck)
 ```
-> cmake --build build --target clang-format
+> cmake --build build --target cppcheck
 ```
 
 ### Test
